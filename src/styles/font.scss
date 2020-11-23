@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Romaji Mincho';
+    src: url('fonts/RomajiMincho.eot');
+    src: url('fonts/RomajiMincho.eot?#iefix') format('embedded-opentype'),
+        url('fonts/RomajiMincho.woff2') format('woff2'),
+        url('fonts/RomajiMincho.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$font-samurai: 'Romaji Mincho', sans-serif;
