@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
     entry: './src/index.js',
@@ -14,11 +15,7 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
-            // // CSS, PostCSS and SASS
-            // {
-            //     test: /\.(scss|css)$/,
-            //     use: [ process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-            // },
+           
             {
                 test: /\.html$/,
                 use: [
@@ -59,7 +56,15 @@ module.exports = {
             template: './src/index.html',
             inject: true,
         }),
-        
+        new HTMLWebpackPlugin({
+            filename: 'page2.html',
+            template: './src/page2.html',
+            inject: true,
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })       
 
     ]
 };

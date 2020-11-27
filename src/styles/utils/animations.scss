@@ -1,0 +1,88 @@
+//ATTENTION ANIMATIONS
+
+//heartbeat
+.heartbeat{animation:heartbeat 1.5s ease-in-out infinite both}
+@keyframes heartbeat{from{transform:scale(1);transform-origin:center center;animation-timing-function:ease-out}10%{transform:scale(.91);animation-timing-function:ease-in}17%{transform:scale(.98);animation-timing-function:ease-out}33%{transform:scale(.87);animation-timing-function:ease-in}45%{transform:scale(1);animation-timing-function:ease-out}}
+
+//ENTRANCE ANIMATIONS
+
+//fade in
+.fade-in{animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+//slide in top
+.slide-in-top{animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both}
+.slide-in-top-menu{animation:slide-in-top .5s cubic-bezier(.25,.46,.45,.94) both; pointer-events: all !important;}
+@keyframes slide-in-top{0%{transform:translateY(-1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+//slide in bottom
+.slide-in-bottom{animation:slide-in-bottom .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+//slide in right
+.slide-in-right{animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slide-in-right{0%{transform:translateX(1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+
+//slide in left
+.slide-in-left{animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+
+//swirl in forward
+.swirl-in-fwd{animation:swirl-in-fwd .6s ease-out both}
+.swirl-in-fwd-menu{animation:swirl-in-fwd .6s ease-out both; pointer-events: all !important;}
+@keyframes swirl-in-fwd{0%{transform:rotate(-540deg) scale(0);opacity:0}100%{transform:rotate(0) scale(1);opacity:1}}
+
+//EXIT ANIMATIONS
+
+//fade out
+.fade-out{animation:fade-out 1s ease-out both}
+@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
+
+// slide out top
+.slide-out-top{animation:slide-out-top .5s cubic-bezier(.55,.085,.68,.53) both}
+@keyframes slide-out-top{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-1000px);opacity:0}}
+
+//slide out bottom
+.slide-out-bottom{animation:slide-out-bottom .5s cubic-bezier(.55,.085,.68,.53) both}
+@keyframes slide-out-bottom{0%{transform:translateY(0);opacity:1}100%{transform:translateY(1000px);opacity:0}}
+
+//slide out right
+.slide-out-right{animation:slide-out-right .5s cubic-bezier(.55,.085,.68,.53) both}
+.slide-out-right-menu{animation:slide-out-right .5s cubic-bezier(.55,.085,.68,.53) both; pointer-events: none;}
+@keyframes slide-out-right{0%{transform:translateX(0);opacity:1}100%{transform:translateX(1000px);opacity:0}}
+
+//slide out left
+.slide-out-left{animation:slide-out-left .5s cubic-bezier(.55,.085,.68,.53) both}
+ @keyframes slide-out-left{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-1000px);opacity:0}}
+
+//swirl out back
+.swirl-out-bck{animation:swirl-out-bck .6s ease-in both}
+@keyframes swirl-out-bck{0%{transform:rotate(0) scale(1);opacity:1}100%{transform:rotate(-540deg) scale(0);opacity:0}}
+
+//scale out horizontal left
+
+.scale-out-hor-left{animation:scale-out-hor-left .5s cubic-bezier(.55,.085,.68,.53) both}
+@keyframes scale-out-hor-left{0%{transform:scaleX(1);transform-origin:0 0;opacity:1}100%{transform:scaleX(0);transform-origin:0 0;opacity:1}}
+
+// transition
+
+$transition-half: all .25s ease-in-out;
+
+.slide-in-top {
+	animation: slide-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @keyframes slide-in-top {
+    0% {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .heartbeat{-webkit-animation:heartbeat 1.5s ease-in-out infinite both;animation:heartbeat 1.5s ease-in-out infinite both}
+
+@-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}

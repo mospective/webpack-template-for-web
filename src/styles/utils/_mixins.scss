@@ -1,0 +1,122 @@
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint== "mobile-small" {
+      @media (max-width: 320px) {
+        @content;
+      }
+    } @else if $breakpoint== "mobile" {
+      @media (max-width: 375px) {
+        @content;
+      }
+     } @else if $breakpoint== "mobile-large" {
+      @media (max-width: 414px) {
+        @content;
+      }
+    }  @else if $breakpoint== "phablet" {
+      @media (max-width: 640px) {
+        @content;
+      }
+    } @else if $breakpoint== "tablet" {
+      @media (max-width: 768px) {
+        @content;
+      }
+    } @else if $breakpoint== "tablet-large" {
+      @media (max-width: 1024px) {
+        @content;
+      }
+    } @else if $breakpoint== "desktop-13" {
+      @media (max-width: 1280px) {
+        @content;
+      }
+    } @else if $breakpoint== "desktop-15" {
+      @media (max-width: 1440px) {
+        @content;
+      }
+    } @else if $breakpoint== "desktop-16" {
+      @media (min-width: 1792px) {
+        @content;
+      }
+    } @else {
+      @media ($breakpoint) {
+        @content;
+      }
+    }
+  }
+
+  /* Use: @include respond-to('mobile') {} */
+
+  // custom screen
+@mixin randomSize($screen-screenSize, $minmax-minmax) {
+    @media ($minmax-minmax: $screen-screenSize+'px') {
+        @content;
+    }
+  }
+  
+  
+  @mixin ipad-mini {
+    @media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (-webkit-min-device-pixel-ratio: 1) {
+        @content;
+  }
+  }
+  
+  @mixin ipad-pro {
+    @media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+    }
+  }
+
+
+  
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  
+  @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+      & {
+        font-size: $min-font-size;
+        @media screen and (min-width: $min-vw) {
+          font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+        @media screen and (min-width: $max-vw) {
+          font-size: $max-font-size;
+        }
+      }
+    }
+  }
+
+  //font-sizes
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 11px;
+$max_font: 16px;
+
+// IE ONLY 
+
+@mixin old-ie {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      @content;
+   }
+  }
+  
+  // box shadow
+  
+  @mixin box-shadow {
+    box-shadow: 0px 20px 30px 0px rgba(59, 59, 59, 0.12); 
+  }
+  @mixin box-shadow-2 {
+    box-shadow: 0px 10px 11.44px 1.56px rgba(59, 59, 59, 0.09); 
+  }
+  
+  

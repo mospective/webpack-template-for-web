@@ -1,0 +1,104 @@
+
+
+#outer-footer {
+    font-family: 'Arial', Helvetica, sans-serif;
+    background: #fff;
+    border-top: 1px solid #eee;
+    width: 100% !important;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px !important;
+
+  }
+
+  #outer-footer p {
+      margin: 0;
+  }
+  
+  #inner-footer-expert {
+  
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto;
+  }
+  
+  #inner-footer-expert #footerLogo-Links {
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    height: 43px;
+  
+    font-size: 17px;
+    margin-left: 20px;
+  }
+  
+  div#footer-bottom {
+    font-size: 13px;
+    margin-bottom: 5px;
+    margin-left: 11px;
+    @include old-ie {
+      width: 100%;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      width: 100%;
+   }
+  }
+
+  #inner-footer-expert #footer-bottom .single-col {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      margin-bottom: 1em;
+   }
+  }
+  
+  #inner-footer-expert #footer-bottom .single-col .col.col-12 nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+  
+  }
+  #inner-footer-expert #footer-bottom .single-col .col.col-12 {
+    margin-bottom: 1em;
+  }
+
+  #inner-footer-expert #footer-bottom .single-col .col.col-12 nav ul  li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /*NEED AMEND*/
+  #inner-footer-expert #copyright-text {
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin: 19px 0px 0px 20px;
+  }
+  
+  #inner-footer-expert #footerLogo {
+    margin: 10px 0px 0px 0px;
+  }
+  
+  #inner-footer-expert p {
+    color: #304a7f;
+  }
+  
+  #inner-footer-expert span {
+    color: #333;
+  }
+  
+  #inner-footer-expert a {
+    margin-right: 8px;
+    color: #666;
+    font-weight: normal;
+  }
+  
+  #inner-footer-expert a:hover {
+    text-decoration: none;
+    color: #002776;
+  }
+  
+  #inner-footer-expert #copyright-text {
+    display: none;
+  }
