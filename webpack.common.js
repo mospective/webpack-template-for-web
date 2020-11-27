@@ -1,18 +1,9 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({})]
-    },
     entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'build')
-    },
     module: {
         rules: [
             // JS transpile
@@ -23,11 +14,11 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
-            // CSS, PostCSS and SASS
-            {
-                test: /\.(scss|css)$/,
-                use: [ process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-            },
+            // // CSS, PostCSS and SASS
+            // {
+            //     test: /\.(scss|css)$/,
+            //     use: [ process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+            // },
             {
                 test: /\.html$/,
                 use: [
@@ -40,20 +31,7 @@ module.exports = {
                     }
                 ]
             },
-            // Images
-            {
-                test: /\.(gif|png|jpg|svg)(\?.*$|$)/,
-                use: [{
-                    loader: "url-loader",
-                    options: {
-                        esModule: false,
-                        limit: 5000,
-                        name: "img/[hash].[ext]",
-                        quality: 75
-
-                    }
-                }]
-            },
+           
             // fonts
             {
                 test: /\.(woff|woff2|ttf|otf|eot)$/,
@@ -81,10 +59,7 @@ module.exports = {
             template: './src/index.html',
             inject: true,
         }),
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        })
+        
 
     ]
 };

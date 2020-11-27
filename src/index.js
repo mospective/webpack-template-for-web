@@ -3,6 +3,7 @@ import './fonts/RomajiMincho.woff';
 import './fonts/RomajiMincho.woff2';
 import './main.scss';
 
+
 console.log('Test file');
 
 const file = 27;
